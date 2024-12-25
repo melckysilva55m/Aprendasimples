@@ -48,7 +48,7 @@
         /* Cabeçalho */
         header {
             background-color: rgba(0, 0, 0, 0.5); /* Capa transparente */
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQErFXF_B4TfFi3I1ja3T2bvQlkhiyPEBv8fA&usqp=CAU');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzJJSLY_vhtyxIWDB6hIHFOLpBAPNULKCbhg&usqp=CAU');
             background-size: cover;
             background-position: center;
             color: white;
@@ -202,7 +202,7 @@
             color: #fff;
         }
 
-        /* Notificação de compra */
+        /* Notificação de compra (pop-up) */
         .notificacao {
             position: fixed;
             bottom: 20px;
@@ -210,16 +210,17 @@
             background-color: #ff7043;
             color: #fff;
             padding: 10px 20px;
-            border-radius: 30px;
+            border-radius: 25px;
             font-size: 1.1rem;
             z-index: 999;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
         }
 
         .notificacao.show {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
 
         /* Imagem do curso */
@@ -263,7 +264,7 @@
             <h1>Curso Binariedade e Linguagem Neutra</h1>
             <h2>Compreenda a importância da inclusão linguística e de gênero.</h2>
             <p>Aprenda a utilizar a linguagem neutra e entenda o universo das identidades não-binárias, respeitando as diferentes formas de viver e se comunicar.</p>
-            <button class="btn-primary" id="ctaBtn">Garantir meu acesso por R$ 39,99</button>
+            <a href="https://go.hotmart.com/O97217387N" target="_blank" class="btn-primary" id="ctaBtn">Garantir meu acesso por R$ 39,99</a>
         </div>
     </header>
 
@@ -274,20 +275,14 @@
             <p class="section-description">Este curso foi desenvolvido para te ajudar a compreender e utilizar a <strong>linguagem neutra</strong>, ampliando seu conhecimento sobre identidade de gênero e inclusão. Aprenda de forma prática e acessível!</p>
         </div>
 
-        <div class="curso-imagem">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JEFbt6kkQJ4eUl22oeUr_KUq4Pb_LREmvQ&usqp=CAU" alt="Curso Não Binário">
-        </div>
-
         <div class="detalhes-curso">
-            <div class="texto">
-                <ul>
-                    <li><strong>Identidades sexuais e de gênero</strong>: Entenda as diversas formas de vivenciar o gênero e a sexualidade.</li>
-                    <li><strong>Pensamento binário</strong>: Como os rótulos tradicionais de gênero afetam as relações e a comunicação.</li>
-                    <li><strong>Identidades não-binárias</strong>: O que significa não se identificar com o sistema de gênero binário.</li>
-                    <li><strong>Masculino genérico na língua portuguesa</strong>: Como a língua reflete e reforça estereótipos de gênero.</li>
-                    <li><strong>Princípios e usos da linguagem neutra</strong>: Como adotar práticas linguísticas inclusivas e respeitosas com todas as identidades.</li>
-                </ul>
-            </div>
+            <ul>
+                <li><strong>Identidades sexuais e de gênero</strong>: Entenda as diversas formas de vivenciar o gênero e a sexualidade.</li>
+                <li><strong>Pensamento binário</strong>: Como os rótulos tradicionais de gênero afetam as relações e a comunicação.</li>
+                <li><strong>Identidades não-binárias</strong>: O que significa não se identificar com o sistema de gênero binário.</li>
+                <li><strong>Masculino genérico na língua portuguesa</strong>: Como a língua reflete e reforça estereótipos de gênero.</li>
+                <li><strong>Princípios e usos da linguagem neutra</strong>: Como adotar práticas linguísticas inclusivas e respeitosas com todas as identidades.</li>
+            </ul>
         </div>
     </section>
 
@@ -326,7 +321,7 @@
     <script>
         // Exibe o pop-up ao clicar no botão
         document.getElementById('ctaBtn').addEventListener('click', function() {
-            document.getElementById('popup').style.display = 'flex';
+            window.location.href = "https://go.hotmart.com/O97217387N";
         });
 
         // Função para exibir notificações de compra com nomes comuns brasileiros
