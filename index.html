@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Não-Binariedade e Linguagem Neutra</title>
+    <title>Curso Binariedade e Linguagem Neutra</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset básico */
@@ -33,17 +33,6 @@
             }
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
         @keyframes pulsar {
             0% {
                 color: #ff7043;
@@ -58,10 +47,13 @@
 
         /* Cabeçalho */
         header {
-            background-color: #6a1b9a; /* Roxo vibrante */
+            background-color: rgba(0, 0, 0, 0.5); /* Capa transparente */
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQErFXF_B4TfFi3I1ja3T2bvQlkhiyPEBv8fA&usqp=CAU');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 100px 20px;
             position: relative;
             animation: fadeIn 1.2s ease-in-out;
         }
@@ -90,19 +82,20 @@
         header .btn-primary {
             background-color: #ff7043; /* Coral */
             color: #fff;
-            padding: 15px 35px;
-            font-size: 1.3rem;
+            padding: 18px 40px;
+            font-size: 1.4rem;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         header .btn-primary:hover {
             background-color: #f4511e; /* Coral mais forte */
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Seções */
@@ -212,19 +205,21 @@
         /* Notificação de compra */
         .notificacao {
             position: fixed;
-            top: 20px;
-            right: -300px;
+            bottom: 20px;
+            right: 20px;
             background-color: #ff7043;
             color: #fff;
-            padding: 10px 30px;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
             z-index: 999;
-            transition: right 0.5s ease;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .notificacao.show {
-            right: 20px;
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* Imagem do curso */
@@ -258,7 +253,6 @@
                 align-items: center;
             }
         }
-
     </style>
 </head>
 <body>
@@ -266,7 +260,7 @@
     <!-- Cabeçalho -->
     <header>
         <div class="container">
-            <h1>Curso Não-Binariedade e Linguagem Neutra</h1>
+            <h1>Curso Binariedade e Linguagem Neutra</h1>
             <h2>Compreenda a importância da inclusão linguística e de gênero.</h2>
             <p>Aprenda a utilizar a linguagem neutra e entenda o universo das identidades não-binárias, respeitando as diferentes formas de viver e se comunicar.</p>
             <button class="btn-primary" id="ctaBtn">Garantir meu acesso por R$ 39,99</button>
@@ -326,7 +320,7 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Curso Não Binário e Linguagem Neutra. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Curso Binariedade e Linguagem Neutra. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -335,8 +329,17 @@
             document.getElementById('popup').style.display = 'flex';
         });
 
-        // Função para exibir notificações de compra
-        var nomes = ["João Silva", "Maria Oliveira", "Carlos Souza", "Ana Pereira", "Luana Costa"];
+        // Função para exibir notificações de compra com nomes comuns brasileiros
+        var nomes = [
+            "João Silva", "Maria Oliveira", "Carlos Souza", "Ana Pereira", "Luana Costa", "Pedro Santos", 
+            "Lucas Almeida", "Paula Rodrigues", "Fernando Silva", "Roberta Souza", "Rafael Gomes", "Patrícia Oliveira",
+            "Marcelo Costa", "Renata Oliveira", "Gabriel Pereira", "Sofia Lima", "Victor Santos", "Bruna Costa",
+            "Felipe Almeida", "Aline Lima", "Diego Silva", "Cássio Souza", "Elaine Gomes", "Tatiane Souza",
+            "Henrique Costa", "Isabela Rodrigues", "Leandro Pereira", "Marta Oliveira", "Gustavo Gomes", "Jéssica Costa",
+            "Eduardo Lima", "Larissa Santos", "Ricardo Pereira", "Cristiane Gomes", "Tânia Silva", "Fábio Costa",
+            "Silvana Almeida", "Valter Lima", "Juliana Gomes", "Marcos Oliveira", "Marília Souza", "Tiago Pereira", 
+            "Simone Costa", "José Lima", "Carla Oliveira", "Gisele Gomes", "Márcio Costa", "Francisco Souza", 
+        ];
         var indice = 0;
         setInterval(function() {
             var notificacao = document.getElementById('notificacao');
